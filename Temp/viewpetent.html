@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Information</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .patient-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .patient-card {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: calc(33.333% - 20px); /* Adjust the width of each card as needed */
+    }
+    
+    .patient-card h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    
+    .patient-card p {
+        margin: 5px 0;
+    }
+    
+    @media (max-width: 768px) {
+        .patient-card {
+            width: calc(50% - 20px); /* Adjust the width of each card for smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .patient-card {
+            width: 100%; /* Make each card full width on smaller screens */
+        }
+    }
+    
+</style>
+<body>
+
+<div class="container">
+    <h2>Patient Information</h2>
+    <div class="patient-cards">
+        <!-- Patient cards will be inserted here -->
+        <div class="patient-card">
+            <h3>John Doe</h3>
+            <p><strong>Age:</strong> 35</p>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Diagnosis:</strong> Hypertension</p>
+        </div>
+        <div class="patient-card">
+            <h3>Jane Smith</h3>
+            <p><strong>Age:</strong> 42</p>
+            <p><strong>Gender:</strong> Female</p>
+            <p><strong>Diagnosis:</strong> Diabetes</p>
+        </div>
+        <!-- Add more patient cards as needed -->
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Database Data</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    table th,
+    table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    table th {
+        background-color: #f2f2f2;
+    }
+    
+    table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    table tbody tr:hover {
+        background-color: #ddd;
+    }
+    
+</style>
+<body>
+
+<div class="container">
+    <h2>Database Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="table-data">
+            <!-- Table data will be inserted here -->
+        </tbody>
+    </table>
+</div>
+
+<script src="script.js">
+    // Dummy data for demonstration
+const dataFromDatabase = [
+{ id: 1, name: "John Doe", email: "john@example.com" },
+{ id: 2, name: "Jane Smith", email: "jane@example.com" },
+{ id: 3, name: "Bob Johnson", email: "bob@example.com" }
+];
+
+const tableBody = document.getElementById('table-data');
+
+// Function to populate table with data
+function populateTable(data) {
+tableBody.innerHTML = ''; // Clear previous data
+data.forEach(rowData => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${rowData.id}</td>
+        <td>${rowData.name}</td>
+        <td>${rowData.email}</td>
+    `;
+    tableBody.appendChild(row);
+});
+}
+
+// Call the function to populate the table with data from the database
+populateTable(dataFromDatabase);
+
+</script>
+</body>
+</html>
